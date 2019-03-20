@@ -6,7 +6,7 @@ brew install go
 brew install dep
 brew cask install goland
 
-if ! cat ~/.bash_profile | grep 'export PATH="$PATH:$HOME/go/bin"'; then
+if ! grep -q 'export PATH="$PATH:$HOME/go/bin"' ~/.bash_profile; then
   echo 'export PATH="$PATH:$HOME/go/bin"' >> ~/.bash_profile
 fi
 
@@ -40,7 +40,7 @@ install_kubebuilder() {
   rm -rf $dir
 
   # update your PATH to include /usr/local/kubebuilder/bin
-  if ! cat ~/.bash_profile | grep 'export PATH="$PATH:/usr/local/kubebuilder/bin"'; then
+  if ! grep -q 'export PATH="$PATH:/usr/local/kubebuilder/bin"' ~/.bash_profile; then
     echo 'export PATH="$PATH:/usr/local/kubebuilder/bin"' >> ~/.bash_profile
   fi
 }
