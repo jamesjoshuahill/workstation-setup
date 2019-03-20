@@ -16,6 +16,10 @@ echo "Putting a sample git-pair file in ~/.pairs"
 cp files/.pairs ~/.pairs
 
 echo
+echo "Putting a sample git-duet file in ~/.git-authors"
+cp files/.git-authors ~/.git-authors
+
+echo
 echo "Setting global Git configurations"
 git config --global core.editor /usr/local/bin/vim
 git config --global transfer.fsckobjects true
