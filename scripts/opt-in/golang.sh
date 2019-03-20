@@ -6,6 +6,10 @@ brew install go
 brew install dep
 brew cask install goland
 
+if ! cat ~/.bash_profile | grep 'export PATH="$PATH:$HOME/go/bin"'; then
+  echo 'export PATH="$PATH:$HOME/go/bin"' >> ~/.bash_profile
+fi
+
 source ${MY_DIR}/scripts/common/download-pivotal-ide-prefs.sh
 pushd ~/workspace/pivotal_ide_prefs/cli
 ./bin/ide_prefs install --ide=goland
