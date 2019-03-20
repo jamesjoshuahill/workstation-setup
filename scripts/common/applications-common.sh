@@ -16,6 +16,7 @@ echo
 brew cask install dash
 brew cask install postman
 brew cask install quicklook-json
+brew install lastpass-cli
 
 # Terminals
 
