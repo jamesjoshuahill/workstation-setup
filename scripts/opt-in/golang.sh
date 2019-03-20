@@ -48,3 +48,5 @@ install_kubebuilder() {
 install_kubebuilder
 
 brew install kustomize
+brew cask install virtualbox
+brew cask install minikube
