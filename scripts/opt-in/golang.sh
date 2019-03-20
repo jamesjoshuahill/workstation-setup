@@ -6,9 +6,7 @@ brew install go
 brew install dep
 brew cask install goland
 
-if ! grep -q 'export PATH="$PATH:$HOME/go/bin"' ~/.bash_profile; then
-  echo 'export PATH="$PATH:$HOME/go/bin"' >> ~/.bash_profile
-fi
+echo 'export PATH="$PATH:$HOME/go/bin"' >> ~/.bash_profile
 
 source ${MY_DIR}/scripts/common/download-pivotal-ide-prefs.sh
 pushd ~/workspace/pivotal_ide_prefs/cli
@@ -40,9 +38,7 @@ install_kubebuilder() {
   rm -rf $dir
 
   # update your PATH to include /usr/local/kubebuilder/bin
-  if ! grep -q 'export PATH="$PATH:/usr/local/kubebuilder/bin"' ~/.bash_profile; then
-    echo 'export PATH="$PATH:/usr/local/kubebuilder/bin"' >> ~/.bash_profile
-  fi
+  echo 'export PATH="$PATH:/usr/local/kubebuilder/bin"' >> ~/.bash_profile
 }
 
 install_kustomize() {

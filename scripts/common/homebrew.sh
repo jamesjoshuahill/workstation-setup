@@ -32,6 +32,4 @@ brew cleanup
 
 echo
 echo "Adding Homebrew's sbin to your PATH..."
-if ! grep -q 'export PATH="/usr/local/sbin:$PATH"' ~/.bash_profile; then
-  echo 'export PATH="/usr/local/sbin:$PATH"' >> ~/.bash_profile
-fi
+echo 'export PATH="/usr/local/sbin:$PATH"' >> ~/.bash_profile
