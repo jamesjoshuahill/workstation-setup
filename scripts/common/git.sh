@@ -20,9 +20,14 @@ echo "Putting a sample git-duet file in ~/.git-authors"
 cp files/.git-authors ~/.git-authors
 
 echo
+echo "Putting global .gitignore file in ~/.gitignore"
+cp files/.gitignore ~/.gitignore
+
+echo
 echo "Setting global Git configurations"
 git config --global core.editor /usr/local/bin/vim
 git config --global transfer.fsckobjects true
+git config --global core.excludesfile ~/.gitignore
 
 HOOKS_DIRECTORY=$HOME/workspace/git-hooks-core
 if [ ! -d $HOOKS_DIRECTORY ]; then
