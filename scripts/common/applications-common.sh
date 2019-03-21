@@ -41,3 +41,10 @@ brew cask install jetbrains-toolbox --force # guard against pre-installed jetbra
 brew cask install visual-studio-code
 brew cask install atom
 set -e
+
+# Scripts
+
+mkdir -p ~/bin/
+echo 'export PATH="$PATH:$HOME/bin"' >> ~/.bash_profile
+
+cp files/bin/load-key ~/bin/

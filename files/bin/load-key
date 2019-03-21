@@ -1,0 +1,32 @@
+#!/usr/bin/env bash
+
+set -e
+set -u
+
+prompt_to_logout() {
+  if lpass status; then
+    set +e
+    lpass logout
+    set -e
+  fi
+}
+
+ensure_logged_in() {
+  if ! lpass status > /dev/null 2>&1; then
+    echo "Please enter your LastPass username to login:"
+    read -r username
+    lpass login "$username"
+  fi
+}
+
+load_key() {
+  bash <(lpass show 'Personal/Load GitHub SSH Key' --notes) "$@"
+}
+
+main() {
+  prompt_to_logout
+  ensure_logged_in
+  load_key "$@"
+}
+
+main "$@"
