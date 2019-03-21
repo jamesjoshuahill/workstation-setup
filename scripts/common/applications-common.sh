@@ -36,3 +36,4 @@ mkdir -p ~/bin/
 echo 'export PATH="$PATH:$HOME/bin"' >> ~/.bash_profile
 
 cp files/bin/load-key ~/bin/
+cp files/bin/unload-key ~/bin/
