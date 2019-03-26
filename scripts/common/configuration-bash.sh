@@ -27,5 +27,8 @@ echo
 echo "Configuring direnv with bash-it"
 brew install direnv
 cp files/direnv.bash ~/.bash_it/custom/direnv.bash
+mkdir -p ~/.bash_it/aliases/enabled
+echo "#Direnv" >> ~/.bash_it/aliases/enabled/general.aliases.bash
+echo "alias da='direnv allow'" >> ~/.bash_it/aliases/enabled/general.aliases.bash
 
 brew install shellcheck
