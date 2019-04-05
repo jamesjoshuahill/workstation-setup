@@ -3,7 +3,7 @@ echo 'Customizing OS X configuration'
 
 # set menu clock
 # see http://www.unicode.org/reports/tr35/tr35-31/tr35-dates.html#Date_Format_Patterns
-defaults write com.apple.menuextra.clock "DateFormat" 'EEE MMM d  h:mm:ss a'
+defaults write com.apple.menuextra.clock "DateFormat" 'EEE MMM d  h:mm a'
 killall SystemUIServer
 
 # hide the dock
@@ -28,6 +28,3 @@ chmod a+rx,go-w /usr/local/bin/dockutil
 dockutil --list | awk -F\t '{print "dockutil --remove \""$1"\" --no-restart"}' | sh
 dockutil --add /Applications/Google\ Chrome.app --no-restart
 dockutil --add /Applications/iTerm.app
-
- 
- 
